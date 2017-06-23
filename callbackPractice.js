@@ -23,6 +23,9 @@ and what you should write is the sayHi function that makes the code above work,
 // 1. Write a function called first that returns the first item of the array using a callback function
 
   // Code Here
+  var first = function(arr, cb){
+    cb(arr[0]);
+  }
 
   
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -36,6 +39,10 @@ first(names, function(firstName){
 
   //Code Here
 
+  var last = function(arr, cb){
+    cb(arr[arr.length-1]);
+  }
+
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
 });
@@ -45,6 +52,9 @@ last(names, function(lastName){
 // 3. Write a function called multiply that multiplies two numbers using a callback function.
 
   //Code Here
+  multiply = function(num1, num2, cb){
+    cb(num1 * num2);
+  }
 
 
 multiply(4, 3, function(answer){
@@ -57,6 +67,9 @@ multiply(4, 3, function(answer){
 // If it does, return true using the callback, if not return false.
 
   //Code Here 
+  var contains = function(arr, str, cb){
+    cb(arr.includes(str));
+  }
 
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -72,16 +85,28 @@ contains(names, 'Colt', function(result){
 // the callback function with the array of unique names.
 
     //Code Here
+    var uniq = function(arr, cb){
+      cb(
+        arr.filter(function(name, index, arr){
+          return(arr.indexOf(name) === index)
+        })
+        
+      );
+    }
 
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 
-
 // 6. Write a function called each that takes in an array of names. For each item, use a callback 
 // function to return the indices and item.
 
     //Code Here 
+    var each = function(str, cb){
+      cb(
+        item = str.indexOf(name);
+      )
+    }
 
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
