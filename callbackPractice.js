@@ -102,10 +102,10 @@ uniq(names, function(uniqArr){
 // function to return the indices and item.
 
     //Code Here 
-    var each = function(str, cb){
-      cb(
-        item = str.indexOf(name);
-      )
+    var each = function(arr, cb){
+      for(var i = 0; i < arr.length; i++){
+        cb(arr[i], i);
+      }
     }
 
 each(names, function(item, indice){
@@ -118,6 +118,14 @@ each(names, function(item, indice){
 // and returns that user.
 
  //Code Here
+
+ var getUserById = function(users, id, cb){
+   for(var i = 0; i < users.length; i++){
+     if(users[i].id === id){
+       return cb(users[i])
+     }
+   }
+ }
 
 var users = [
   {
